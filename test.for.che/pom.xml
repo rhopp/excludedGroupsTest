@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>test.for.che</groupId>
+	<artifactId>test.for.che</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>testForChe</name>
+	<dependencies>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.8.21</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<executions>
+					<execution>
+<!-- 						<goals> -->
+<!-- 							<goal>integration-test</goal> -->
+<!-- 						</goals> -->
+						<configuration>
+<!-- 							<trimStackTrace>false</trimStackTrace> -->
+<!-- 							<properties> -->
+<!-- 								<property> -->
+<!-- 									<name>configfailurepolicy</name> -->
+<!-- 									<value>continue</value> -->
+<!-- 								</property> -->
+<!-- 								<property> -->
+<!-- 									<name>listener</name> -->
+<!-- 									<value>org.eclipse.che.selenium.core.CheSeleniumTestHandler</value> -->
+<!-- 								</property> -->
+<!-- 							</properties> -->
+<!-- 							<systemProperties> -->
+<!-- 								<property> -->
+<!-- 									<name>java.util.logging.config.file</name> -->
+<!-- 									<value>${project.build.testOutputDirectory}/logging.properties</value> -->
+<!-- 								</property> -->
+<!-- 							</systemProperties> -->
+							<systemPropertyVariables>
+								<excludedGroups>${excludedGroups}</excludedGroups>
+							</systemPropertyVariables>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+
+	</build>
+</project>
